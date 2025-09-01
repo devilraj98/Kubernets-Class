@@ -17,3 +17,7 @@ README.md
 # OS files
 .DS_Store
 Thumbs.db
+
+# Kubernetes files
+*.yaml
+*.yml
