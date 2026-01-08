@@ -21,4 +21,17 @@ spec:
           image: nginx:alpine
           ports:
             - containerPort: 80
-            
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "256Mi"
+              cpu: "200m"
+          volumeMounts:
+            - mountPath: "/usr/share/nginx/html"
+              name: nginx-storage 
+      volumes:
+        - name: nginx-storage
+          persistentVolumeClaim:
+            claimName: local-pvc
